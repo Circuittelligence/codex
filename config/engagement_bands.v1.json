@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schemas.circuittelligence.com/engagement-bands/v1.json",
+  "version": "1.0.0",
+  "metadata": {
+    "description": "Engagement band configuration for OCEAN personality score analysis",
+    "created": "2025-09-22",
+    "updated": "2025-09-22",
+    "author": "Circuittelligence AI Agents"
+  },
+  "bands": {
+    "low": {
+      "name": "Low Engagement",
+      "description": "Users showing minimal engagement potential based on personality traits",
+      "threshold_min": 0.0,
+      "threshold_max": 0.3,
+      "characteristics": [
+        "Lower openness to new experiences",
+        "Reduced conscientiousness",
+        "Introverted tendencies",
+        "Higher neuroticism levels",
+        "Preference for minimal interaction"
+      ],
+      "engagement_strategies": [
+        "Simple, clear communication",
+        "Gradual introduction of features",
+        "Low-pressure interaction patterns",
+        "Respect for privacy preferences"
+      ]
+    },
+    "medium": {
+      "name": "Medium Engagement",
+      "description": "Users with moderate engagement potential requiring balanced approach",
+      "threshold_min": 0.3,
+      "threshold_max": 0.6,
+      "characteristics": [
+        "Moderate openness to experiences",
+        "Balanced conscientiousness",
+        "Mixed social preferences",
+        "Stable emotional patterns",
+        "Selective engagement preferences"
+      ],
+      "engagement_strategies": [
+        "Balanced content delivery",
+        "Optional advanced features",
+        "Moderate interaction frequency",
+        "Personalized content curation"
+      ]
+    },
+    "high": {
+      "name": "High Engagement",
+      "description": "Users with strong engagement potential and active participation traits",
+      "threshold_min": 0.6,
+      "threshold_max": 0.8,
+      "characteristics": [
+        "High openness to new experiences",
+        "Strong conscientiousness",
+        "Extroverted social preferences",
+        "Low neuroticism levels",
+        "Active participation tendencies"
+      ],
+      "engagement_strategies": [
+        "Rich, interactive content",
+        "Advanced feature availability",
+        "Regular engagement opportunities",
+        "Community-focused interactions"
+      ]
+    },
+    "very_high": {
+      "name": "Very High Engagement",
+      "description": "Users with exceptional engagement potential and leadership qualities",
+      "threshold_min": 0.8,
+      "threshold_max": 1.0,
+      "characteristics": [
+        "Exceptional openness to experiences",
+        "Very high conscientiousness",
+        "Strong extroverted traits",
+        "Very low neuroticism",
+        "Natural leadership tendencies"
+      ],
+      "engagement_strategies": [
+        "Premium content and features",
+        "Leadership opportunities",
+        "High-frequency interactions",
+        "Beta testing and feedback roles",
+        "Community management opportunities"
+      ]
+    }
+  },
+  "rules": {
+    "calculation_method": "weighted_ocean_score",
+    "weights": {
+      "openness": 0.2,
+      "conscientiousness": 0.25,
+      "extraversion": 0.3,
+      "agreeableness": 0.15,
+      "neuroticism": 0.1
+    },
+    "neuroticism_handling": "inverse",
+    "score_bounds": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "validation_rules": {
+      "weights_must_sum_to_one": true,
+      "thresholds_must_be_ascending": true,
+      "scores_must_be_normalized": true
+    }
+  },
+  "default": {
+    "band": "medium",
+    "fallback_strategy": "conservative_medium",
+    "reason": "Applied when OCEAN scores are unavailable or invalid"
+  },
+  "implementation": {
+    "config_path": "config/engagement_bands.v1.json",
+    "loader_class": "EngagementBandCalculator",
+    "validation_required": true,
+    "cache_duration_minutes": 60
+  }
+}
