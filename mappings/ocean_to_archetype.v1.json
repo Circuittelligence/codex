@@ -1,9 +1,72 @@
 {
   "version": "1.0.0",
-  "weights": {
-    "Hero": {}
+  "description": "Mapping from Big Five Ocean personality traits to psychological archetypes",
+  "mappings": {
+    "openness": {
+      "high": ["Explorer", "Creator", "Sage"],
+      "low": ["Innocent", "Regular Guy"]
+    },
+    "conscientiousness": {
+      "high": ["Hero", "Ruler", "Caregiver"],
+      "low": ["Rebel", "Jester"]
+    },
+    "extraversion": {
+      "high": ["Hero", "Lover", "Jester"],
+      "low": ["Sage", "Hermit"]
+    },
+    "agreeableness": {
+      "high": ["Caregiver", "Lover", "Innocent"],
+      "low": ["Rebel", "Ruler"]
+    },
+    "neuroticism": {
+      "high": ["Lover", "Rebel"],
+      "low": ["Hero", "Sage", "Innocent"]
+    }
   },
-  "priors": {
-    "Hero": 1.0
+  "archetypes": {
+    "Hero": {
+      "description": "The champion who rises to meet challenges",
+      "traits": ["brave", "determined", "honest"]
+    },
+    "Sage": {
+      "description": "The wise advisor seeking truth",
+      "traits": ["wise", "knowledgeable", "thoughtful"]
+    },
+    "Explorer": {
+      "description": "The adventurer seeking freedom and authenticity",
+      "traits": ["independent", "adventurous", "pioneering"]
+    },
+    "Innocent": {
+      "description": "The optimist seeking happiness and harmony",
+      "traits": ["pure", "optimistic", "trusting"]
+    },
+    "Regular Guy": {
+      "description": "The everyman seeking belonging",
+      "traits": ["down-to-earth", "relatable", "hardworking"]
+    },
+    "Lover": {
+      "description": "The romantic seeking love and relationships",
+      "traits": ["passionate", "committed", "devoted"]
+    },
+    "Jester": {
+      "description": "The entertainer bringing joy and laughter",
+      "traits": ["fun-loving", "spontaneous", "lighthearted"]
+    },
+    "Caregiver": {
+      "description": "The altruist helping others",
+      "traits": ["caring", "compassionate", "generous"]
+    },
+    "Ruler": {
+      "description": "The leader taking control",
+      "traits": ["responsible", "authoritative", "leader"]
+    },
+    "Creator": {
+      "description": "The artist creating something of value",
+      "traits": ["creative", "imaginative", "artistic"]
+    },
+    "Rebel": {
+      "description": "The revolutionary overthrowing what isn't working",
+      "traits": ["rebellious", "wild", "disruptive"]
+    }
   }
 }
