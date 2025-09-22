@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "description": "Discriminators for behavioral and cognitive pattern recognition",
+  "discriminators": {
+    "cognitive_style": {
+      "analytical": ["data-driven", "logical", "systematic"],
+      "intuitive": ["creative", "holistic", "insightful"],
+      "adaptive": ["flexible", "agile", "responsive"]
+    },
+    "communication_pattern": {
+      "direct": ["concise", "clear", "straightforward"],
+      "diplomatic": ["nuanced", "considerate", "consensus-building"],
+      "expressive": ["enthusiastic", "emotional", "engaging"]
+    },
+    "leadership_style": {
+      "transformational": ["inspirational", "visionary", "motivating"],
+      "transactional": ["structured", "reward-based", "efficiency"],
+      "servant": ["supportive", "empathetic", "empowering"]
+    },
+    "decision_making": {
+      "consensus": ["collaborative", "inclusive", "democratic"],
+      "autocratic": ["decisive", "authoritative", "command"],
+      "delegative": ["empowering", "trusting", "decentralized"]
+    }
+  }
+}
